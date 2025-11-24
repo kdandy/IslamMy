@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'bottom_nav_bar.dart';
 import '../screens/home/home_screen.dart';
+import '../screens/qibla/qibla_screen.dart';
 import '../screens/search/search_screen.dart';
 import '../screens/profile/profile_screen.dart';
 
@@ -8,6 +9,7 @@ import '../screens/profile/profile_screen.dart';
 class AppRouter {
   // Route names
   static const String home = '/';
+  static const String qibla = '/qibla';
   static const String search = '/search';
   static const String profile = '/profile';
 
@@ -16,6 +18,9 @@ class AppRouter {
     switch (settings.name) {
       case home:
         return MaterialPageRoute(builder: (_) => const BottomNavBar());
+      
+      case qibla:
+        return MaterialPageRoute(builder: (_) => const QiblaScreen());
       
       case search:
         return MaterialPageRoute(builder: (_) => const SearchScreen());

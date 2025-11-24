@@ -8,6 +8,8 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  int counter = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,93 +18,62 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
       ),
-      body: SingleChildScrollView(
+      body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 30),
-            // Profile Avatar
-            CircleAvatar(
-              radius: 50,
-              backgroundColor: Colors.red,
-              child: Icon(
-                Icons.person,
-                size: 50,
-                color: Colors.white,
-              ),
-            ),
-            const SizedBox(height: 20),
-            // User Name
+            /// --- Counter Text ---
             Text(
-              'Nama Pengguna',
-              style: TextStyle(
-                fontSize: 24,
+              '$counter',
+              style: const TextStyle(
+                fontSize: 100,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 5),
-            Text(
-              'user@example.com',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
+
+            const SizedBox(height: 40),
+
+            /// --- Add Counter Button ---
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  counter++;
+                });
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 35,
+                  vertical: 15,
+                ),
+              ),
+              child: const Text(
+                'Add Counter',
+                style: TextStyle(fontSize: 18),
               ),
             ),
-            const SizedBox(height: 30),
-            // Profile Options
-            _buildProfileOption(
-              icon: Icons.edit,
-              title: 'Edit Profile',
-              onTap: () {},
-            ),
-            _buildProfileOption(
-              icon: Icons.settings,
-              title: 'Pengaturan',
-              onTap: () {},
-            ),
-            _buildProfileOption(
-              icon: Icons.privacy_tip,
-              title: 'Privasi',
-              onTap: () {},
-            ),
-            _buildProfileOption(
-              icon: Icons.help,
-              title: 'Bantuan',
-              onTap: () {},
-            ),
-            _buildProfileOption(
-              icon: Icons.logout,
-              title: 'Keluar',
-              onTap: () {},
-              isDestructive: true,
+
+            const SizedBox(height: 20),
+
+            /// --- Reset Button ---
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  counter = 0;
+                });
+              },
+              child: const Text(
+                'Reset',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey,
+                ),
+              ),
             ),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildProfileOption({
-    required IconData icon,
-    required String title,
-    required VoidCallback onTap,
-    bool isDestructive = false,
-  }) {
-    return ListTile(
-      leading: Icon(
-        icon,
-        color: isDestructive ? Colors.red : Colors.grey[700],
-      ),
-      title: Text(
-        title,
-        style: TextStyle(
-          color: isDestructive ? Colors.red : Colors.black,
-        ),
-      ),
-      trailing: Icon(
-        Icons.chevron_right,
-        color: Colors.grey,
-      ),
-      onTap: onTap,
     );
   }
 }
