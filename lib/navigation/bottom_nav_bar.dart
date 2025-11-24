@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../screens/home/home_screen.dart';
+import '../screens/qibla/qibla_screen.dart';
 import '../screens/search/search_screen.dart';
 import '../screens/profile/profile_screen.dart';
 
@@ -16,6 +17,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   // Daftar screens untuk setiap tab
   final List<Widget> _screens = [
     const HomeScreen(),
+    const QiblaScreen(),
     const SearchScreen(),
     const ProfileScreen(),
   ];
@@ -42,6 +44,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.explore),
+            label: 'Kiblat',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),

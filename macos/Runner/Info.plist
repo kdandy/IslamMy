@@ -28,5 +28,7 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Aplikasi ini memerlukan akses lokasi untuk menentukan arah kiblat yang akurat berdasarkan posisi Anda.</string>
 </dict>
 </plist>
