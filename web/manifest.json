@@ -5,7 +5,7 @@
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "IslamMy - Aplikasi Islamic companion dengan fitur Tasbih, Jadwal Sholat, Kiblat untuk membantu ibadah sehari-hari",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
