@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class TasbihScreen extends StatefulWidget {
+  const TasbihScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<TasbihScreen> createState() => _TasbihScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _TasbihScreenState extends State<TasbihScreen> {
   int counter = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Profile'),
+        title: const Text('Tasbih'),
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
       ),

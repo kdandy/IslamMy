@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/qibla/qibla_screen.dart';
-import '../screens/search/search_screen.dart';
-import '../screens/profile/profile_screen.dart';
+import '../screens/tasbih/tasbih_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -18,8 +17,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const QiblaScreen(),
-    const SearchScreen(),
-    const ProfileScreen(),
+    const TasbihScreen(),
   ];
 
   @override
@@ -50,12 +48,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'Kiblat',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Profile',
+            label: 'Tasbih',
           ),
         ],
       ),
